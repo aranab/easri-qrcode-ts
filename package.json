@@ -1,0 +1,32 @@
+{
+  "name": "@asri/qrcode",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Cross-browser QR code generator",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aranab/asri-qrcode-ts.git"
+  },
+  "keywords": [
+    "qrcode",
+    "qrcode-ts",
+    "qrcode-generator"
+  ],
+  "author": "Md. Arafat Rahman Rana <aranab.dba@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/aranab/asri-qrcode-ts/issues"
+  },
+  "homepage": "https://github.com/aranab/asri-qrcode-ts#readme",
+  "devDependencies": {
+    "typescript": "^4.6.4",
+    "vite": "^3.2.3"
+  }
+}
