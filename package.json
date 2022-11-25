@@ -19,7 +19,10 @@
     "qrcode-ts",
     "qrcode-generator"
   ],
-  "author": "Md. Arafat Rahman Rana <aranab.dba@gmail.com>",
+  "author": {
+    "name": "Md. Arafat Rahman Rana",
+    "email": "aranab.dba@gmail.com"
+  },
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/aranab/asri-qrcode-ts/issues"
