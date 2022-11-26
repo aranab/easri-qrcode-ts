@@ -33,15 +33,12 @@ export default class SvgDrawing implements IDrawing {
 
   draw(model: IDataModel): void {
     let count = model.getModuleCount();
-    let width = Math.floor(this.#width / count);
-    let height = Math.floor(this.#height / count);
-
     this.clear();
 
     let svg = this.#makeSVG("svg", {
       viewBox: `0 0 ${count} ${count}`,
-      width: `${width}`,
-      height: `${height}`,
+      width: `${this.#width}`,
+      height: `${this.#height}`,
       fill: this.#colorLight,
     });
 
