@@ -1,5 +1,5 @@
 import { IPolynomial } from "../Model";
-import logger from "./Logger";
+import logExpTables from "./LogExpTables";
 
 export default class Polynomial implements IPolynomial {
   numbers: number[] = [];
@@ -34,8 +34,8 @@ export default class Polynomial implements IPolynomial {
 
     for (let i = 0; i < this.getLength; i++) {
       for (let j = 0; j < instance.getLength; j++) {
-        num[i + j] ^= logger.gexp(
-          logger.glog(this.get(i)) + logger.glog(instance.get(j))
+        num[i + j] ^= logExpTables.gexp(
+          logExpTables.glog(this.get(i)) + logExpTables.glog(instance.get(j))
         );
       }
     }
@@ -48,7 +48,8 @@ export default class Polynomial implements IPolynomial {
       return this;
     }
 
-    let ratio = logger.glog(this.get(0)) - logger.glog(instance.get(0));
+    let ratio =
+      logExpTables.glog(this.get(0)) - logExpTables.glog(instance.get(0));
     let num: number[] = new Array(this.getLength);
 
     for (let i = 0; i < this.getLength; i++) {
@@ -56,7 +57,7 @@ export default class Polynomial implements IPolynomial {
     }
 
     for (let i = 0; i < instance.getLength; i++) {
-      num[i] ^= logger.gexp(logger.glog(instance.get(i)) + ratio);
+      num[i] ^= logExpTables.gexp(logExpTables.glog(instance.get(i)) + ratio);
     }
 
     return new Polynomial(num, 0).mod(instance);

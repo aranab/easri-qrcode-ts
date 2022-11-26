@@ -1,6 +1,6 @@
-let instance: Logger;
+let instance: LogExpTables;
 
-class Logger {
+class LogExpTables {
   #EXP_TABLE: number[] = new Array(256);
   #LOG_TABLE: number[] = new Array(256);
 
@@ -49,5 +49,5 @@ class Logger {
   }
 }
 
-const logger = Object.freeze(new Logger());
-export default logger;
+const logExpTables = Object.freeze(new LogExpTables());
+export default logExpTables;

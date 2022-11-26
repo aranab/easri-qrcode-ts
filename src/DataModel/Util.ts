@@ -4,7 +4,7 @@ import {
   IPolynomial,
   MaskPatternType,
 } from "../Model";
-import logger from "./Logger";
+import logExpTables from "./LogExpTables";
 import Polynomial from "./Polynomial";
 import { QRMaskPattern, QRMode } from "../Utilities";
 
@@ -143,7 +143,9 @@ class Util {
   ): IPolynomial {
     let polynomial = new Polynomial([1], 0);
     for (let i = 0; i < errorCorrectLevel; i++) {
-      polynomial = polynomial.multiply(new Polynomial([1, logger.gexp(i)], 0));
+      polynomial = polynomial.multiply(
+        new Polynomial([1, logExpTables.gexp(i)], 0)
+      );
     }
     return polynomial;
   }
