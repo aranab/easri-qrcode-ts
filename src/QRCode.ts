@@ -7,7 +7,12 @@ import {
 } from "./Model";
 import { QRDataModel } from "./DataModel";
 import { Drawing } from "./Drawing";
-import { getTypeNumber, QRErrorCorrectLevel } from "./Utilities";
+import {
+  getTypeNumber,
+  isInvalidString,
+  isOnlySpaces,
+  QRErrorCorrectLevel,
+} from "./Utilities";
 
 export default class QRCode {
   #element: HTMLElement;
@@ -19,7 +24,7 @@ export default class QRCode {
   #drawing: IDrawing;
 
   constructor(
-    el: HTMLElement | string,
+    element: HTMLElement | string,
     text: string,
     {
       width = 256,
@@ -29,17 +34,23 @@ export default class QRCode {
       useSvg = false,
     }: InputOptionsType
   ) {
-    if (typeof el === "string") {
-      let htmlElement = document.querySelector<HTMLElement>(el);
-      if (htmlElement === null) {
-        throw new Error(`(${el}): HTML element is not found.`);
+    if (typeof element === "string") {
+      try {
+        let htmlElement = isOnlySpaces(element)
+          ? null
+          : document.querySelector<HTMLElement>(element);
+        if (htmlElement === null) {
+          throw new Error(`(${element}): HTML element is not found.`);
+        }
+        this.#element = htmlElement;
+      } catch (error) {
+        throw error;
       }
-      this.#element = htmlElement;
     } else {
-      this.#element = el;
+      this.#element = element;
     }
 
-    if (typeof text !== "string" || /^\s*$/.test(text)) {
+    if (isInvalidString(text)) {
       throw new Error(`(${text}): Text must be string datatype.`);
     }
 

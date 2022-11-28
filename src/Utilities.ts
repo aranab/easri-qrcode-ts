@@ -7,6 +7,29 @@ import {
 } from "./Model";
 
 /**
+ * If string has only spaces.
+ *
+ * @param {string} text
+ * @returns {boolean}
+ */
+export function isOnlySpaces(text: string): boolean {
+  return /^\s*$/.test(text);
+}
+
+/**
+ * If given text is invalid of string definition.
+ *
+ * @param {string | null} text
+ * @returns {boolean}
+ */
+export function isInvalidString(text: string | null): boolean {
+  if (typeof text !== "string") {
+    return true;
+  }
+  return isOnlySpaces(text);
+}
+
+/**
  * QR modes.
  */
 export const QRMode: QRModeType = {
