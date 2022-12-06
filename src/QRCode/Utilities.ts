@@ -7,7 +7,7 @@ import {
 } from "./Model";
 
 /**
- * If string has only spaces.
+ * Detecting if string has only spaces.
  *
  * @param {string} text
  * @returns {boolean}
@@ -17,7 +17,7 @@ export function isOnlySpaces(text: string): boolean {
 }
 
 /**
- * If given text is invalid of string definition.
+ * Detecting if given text is invalid of string definition.
  *
  * @param {string | null} text
  * @returns {boolean}

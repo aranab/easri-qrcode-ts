@@ -16,8 +16,8 @@ btn?.addEventListener("click", function (e) {
     new QRCode(app, text.value, {
       width: 128,
       height: 128,
-      useSvg: true,
-      colorDark: "#0d6efd",
+      useSvg: false,
+      colorDark: "#000",
     });
   }
   text.value = "";

@@ -35,17 +35,18 @@ export default class QRCode {
     }: InputOptionsType
   ) {
     if (typeof element === "string") {
+      let htmlElement: HTMLElement | null = null;
       try {
-        let htmlElement = isOnlySpaces(element)
+        htmlElement = isOnlySpaces(element)
           ? null
           : document.querySelector<HTMLElement>(element);
         if (htmlElement === null) {
           throw new Error(`(${element}): HTML element is not found.`);
         }
-        this.#element = htmlElement;
       } catch (error) {
         throw error;
       }
+      this.#element = htmlElement;
     } else {
       this.#element = element;
     }

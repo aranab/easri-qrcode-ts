@@ -28,17 +28,9 @@ export default class TableDrawing implements IDrawing {
       html.push("<tr>");
       for (let col = 0; col < count; col++) {
         html.push(
-          `<td style="
-            border:0;
-            border-collapse:collapse;
-            padding:0;
-            margin:0;
-            width:${width}px;
-            height:${height}px;
-            background-color:${
-              model.isDark(row, col) ? this.#colorDark : this.#colorLight
-            };">
-          <td>`
+          `<td style="border:0;border-collapse:collapse;padding:0;margin:0;width:${width}px;height:${height}px;background-color:${
+            model.isDark(row, col) ? this.#colorDark : this.#colorLight
+          };"><td>`
         );
       }
       html.push("</tr>");
