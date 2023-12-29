@@ -1,5 +1,5 @@
-# Asri QR Code Generator
-Cross-browser with HTML5 Canvas, SVG and Table tag QR Code generator using TypeScript. This repository has no external module dependencies. The development has been initiated by vite module bundler. 
+# Easri QR Code Generator
+Cross-browser with HTML5 Canvas, SVG, and Table tag QR Code generator using TypeScript. This repository has no external module dependencies. The development has been initiated by the Vite module bundler. 
 
 ## Build Command
 - Development dependencies install `> npm install`
